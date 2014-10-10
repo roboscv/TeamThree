@@ -1,0 +1,12 @@
+<article class="author">
+	<header>
+		<h1><%= @author.name %><h1>
+	</header>
+	<p><label>Date of birth: </label><%= @author.dob %></p>
+	<p><label>Nationality: </label><%= @author.nationality %></p>
+	<p><label>Awards: </label><%= @author.awards %></p>
+	<p><label>Biography: </label><%= @author.biography %></p>
+	<p><label>Image URL: </label><%= @author.image_url %></p>
+</article>
+
+<%= link_to("All Authors", authors_path) %>
