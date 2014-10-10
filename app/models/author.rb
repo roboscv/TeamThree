@@ -1,7 +1,10 @@
 class Author < ActiveRecord::Base
+include ActiveModel::Validations
+	
+
 	validates :name, :dob, :nationality, :biography, :image_url, presence: true
 
 	validates :biography, 
-			  length: {greater_than_or_equal_to: 15},
-			  if: "length.present?"
+			  length: {minimum: 15},
+			  if: "biography.present?"
 end
