@@ -13,7 +13,6 @@ Author.create(name:"Card", dob:17890913, nationality:"American", awards:"Awards.
 Author.create(name:"Orwell", dob:18010222, nationality:"Russian", awards:"Awards...", biography:"He wrote about depressing stuff that a lot of people probably cared about. DOB...lol", image_url:"orwell.jpg")
 Author.create(name:"Martin", dob:19650730, nationality:"Westeroc", awards:"Highborn", biography:"He's the man. Hands down the GOAT. DOB is definitely wrong but that don't matter.", image_url:"martin.gif")
 
-
 Book.create(isbn: '9780582186552', title: 'The Hobbit', author_id: '1', genre: 'Fiction',
     abstract: 'A precursor to many sequels ',
 	pages:317, image_cover_url: 'http://upload.wikimedia.org/wikipedia/en/4/4a/TheHobbit_FirstEdition.jpg',
