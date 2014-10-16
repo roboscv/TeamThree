@@ -1,4 +1,6 @@
 class Author < ActiveRecord::Base
+has_many :books, dependent: destroy
+
 include ActiveModel::Validations
 	
 
