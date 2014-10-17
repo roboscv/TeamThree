@@ -1,3 +1,4 @@
+<%= render 'shared/flashes' %>
 <article class="author">
 	<header>
 		<h1><%= @author.name %><h1>
@@ -9,5 +10,9 @@
 	<p><label>Image URL: </label><%= @author.image_url %></p>
 </article>
 
-<%= link_to("Edit Authors", edit_author_path(@author)) %>
+<%= link_to("Edit #{@author.name}", edit_author_path(@author)) %> |
 <%= link_to("All Authors", authors_path) %>
+
+<%= button_to "Delete #{@author.name}", @author, 
+				method: :delete,
+				data: { confirm: 'Are you sure?'} %>

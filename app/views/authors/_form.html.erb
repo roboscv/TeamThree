@@ -1,4 +1,5 @@
-<%= form_for(@author) do |f| %>
+<%= render '/shared/validation_errors', object: @author %>
+  <%= form_for(@author) do |f| %>
   <%= f.label :name %> <%= f.text_field :name, autofocus: true %><br />
   <%= f.label :dob %> <%= f.date_select :dob %><br />
   <%= f.label :nationality %> <%= f.text_field :nationality %><br />
