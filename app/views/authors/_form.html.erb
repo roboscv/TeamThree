@@ -1,0 +1,13 @@
+<%= form_for(@author) do |f| %>
+  <%= f.label :name %> <%= f.text_field :name, autofocus: true %><br />
+  <%= f.label :dob %> <%= f.date_select :dob %><br />
+  <%= f.label :nationality %> <%= f.text_field :nationality %><br />
+  <%= f.label :awards %> <%= f.text_field :awards %><br />
+  <%= f.label :biography %><br />
+  	<%= f.text_area :biography %><br />
+  <%= f.label :image_url %> <%= f.text_field :image_url %><br />
+  <p>
+  	<%= f.submit %>
+ 	<%= link_to("Canel", authors_path) %>
+  </p>
+<% end %>
