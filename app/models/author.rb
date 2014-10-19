@@ -1,6 +1,6 @@
 class Author < ActiveRecord::Base
 has_many :books, dependent: :destroy
-
+	AUTHORS = ['Tolkien', 'Rand', 'Card', 'Orwell', 'Martin', 'King', 'Winfrey']
 include ActiveModel::Validations
 	
 

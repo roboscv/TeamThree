@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
-before_action :set_book
+before_action :set_author
 	def index
 		@authors = Author.all
 	end
@@ -36,10 +36,11 @@ before_action :set_book
 
 	private
 
-	def set_book
-		@book = Book.find(params[:book_id])
-	end
-	def author_params
+	def set_author
+      @author = Author.find(params[:id])
+    end
+
+		def author_params
 		params.require(:name, :dob, :nationality, :biography, :image_url).permit(:awards)
 	end
 

@@ -29,17 +29,21 @@ class BooksController < ApplicationController
 		end
 	end
 	def destroy
-		redirect_to books_url
+		@book.destroy
+		redirect_to books_url, notice: "#{@book.title}  successfully deleted."
 	end
 
 	private
 
 	def book_params
-		params.require(:book).permit(:title, :author_id, :isbn, :abstract, :pages, :genre, :published_on, :total_in_library)
+		params.require(:book).permit(:title, :author_id, :isbn, :abstract, :pages, :genre, :published_on, :total_in_library, :image_cover_url)
 	end
 
 	def set_book
 		@book = Book.find(params[:id])
+	end
+	def set_author
+		@author = Author.where('id=?', :author)
 	end
 end
 

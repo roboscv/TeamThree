@@ -1,6 +1,6 @@
 GmuLibraryProject::Application.routes.draw do
   resources :books do
-    get 'page/:page', :action => :index, :on => :collection
+        get 'page/:page', :action => :index, :on => :collection
   end
   root 'books#index'
   #get "/books" => "books#index", as: 'books'

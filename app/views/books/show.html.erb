@@ -12,6 +12,8 @@
 	<p><label>Published On: </label><%= @book.published_on %></p>
 </article>
 
-<%= link_to("All books", books_path) %>
-<%= link_to "Edit", edit_book_path(@book) %>
+<%= link_to "Edit", edit_book_path(@book) %> |
+<%= button_to "Delete", @book, 
+	method: :delete, 
+	data: {confirm: 'Are you sure?'} %>
 
