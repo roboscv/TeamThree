@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
-
+before_action :set_book
 	def index
 		@authors = Author.all
 	end
@@ -33,4 +33,14 @@ class AuthorsController < ApplicationController
 	def destroy
 
 	end
+
+	private
+
+	def set_book
+		@book = Book.find(params[:book_id])
+	end
+	def author_params
+		params.require(:name, :dob, :nationality, :biography, :image_url).permit(:awards)
+	end
+
 end
