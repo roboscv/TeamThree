@@ -1,9 +1,11 @@
+<% content_for :title, @book.title %>
 <article class="book">
 	<header>
 		<h2><%= @book.title %><h2>
 	</header>
+	<p><%= image_tag @book.image_cover_url %>
 	<p><label>ISBN: </label><%= @book.isbn%></p>
-	<p><label>Author: </label><%= @book.author_id%></p>
+	<p><label>Author: </label><%= @book.author.name%></p>
 	<p><label>Genre: </label><%= @book.genre %></p>
 	<p><label>Abstract: </label><%= @book.abstract %></p>
 	<p><label>Pages: </label><%= @book.pages %></p>

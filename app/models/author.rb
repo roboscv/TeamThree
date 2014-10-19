@@ -1,5 +1,5 @@
 class Author < ActiveRecord::Base
-has_many :books, dependent: destroy
+has_many :books, dependent: :destroy
 
 include ActiveModel::Validations
 	
@@ -9,4 +9,4 @@ include ActiveModel::Validations
 	validates :biography, 
 			  length: {minimum: 15},
 			  if: "biography.present?"
-end
+end	
