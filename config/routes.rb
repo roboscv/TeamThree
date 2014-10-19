@@ -1,6 +1,8 @@
 GmuLibraryProject::Application.routes.draw do
-  resources :books
-
+  resources :books do
+    get 'page/:page', :action => :index, :on => :collection
+  end
+  root 'books#index'
   #get "/books" => "books#index", as: 'books'
 
   # The priority is based upon order of creation: first created -> highest priority.
