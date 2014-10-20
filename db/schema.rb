@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017002029) do
+ActiveRecord::Schema.define(version: 20141020010013) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -44,11 +44,14 @@ ActiveRecord::Schema.define(version: 20141017002029) do
   create_table "reservations", force: true do |t|
     t.date     "reserved_on"
     t.date     "due_on"
-    t.integer  "user_id"
-    t.integer  "book_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "book_id"
   end
+
+  add_index "reservations", ["book_id"], name: "index_reservations_on_book_id"
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

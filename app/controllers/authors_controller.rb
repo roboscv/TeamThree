@@ -40,7 +40,7 @@ before_action :set_author
       @author = Author.find(params[:id])
     end
 
-		def author_params
+	def author_params
 		params.require(:name, :dob, :nationality, :biography, :image_url).permit(:awards)
 	end
 
