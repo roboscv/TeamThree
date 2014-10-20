@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Author.create(author_id: 1, name:"Tolkien", dob:19350412, nationality:"American", awards:"Awards...", biography:"He wrote the lord of the rings series. This DOB is so wrong...", image_url:"tolkien.jpg")
-Author.create(author_id: 2, name:"Rand", dob:18191212, nationality:"German", awards:"Awards...", biography:"She wrote something important too. DOB is also wrong...", image_url:"rand.jpg")
-Author.create(author_id: 3, name:"Card", dob:17890913, nationality:"American", awards:"Awards...", biography:"He wrote something about something that people cared about. DOB so, so wrong...", image_url:"card.jpg")
-Author.create(author_id: 4, name:"Orwell", dob:18010222, nationality:"Russian", awards:"Awards...", biography:"He wrote about depressing stuff that a lot of people probably cared about. DOB...lol", image_url:"orwell.jpg")
-Author.create(author_id: 5, name:"Martin", dob:19650730, nationality:"Westeroc", awards:"Highborn", biography:"He's the man. Hands down the GOAT. DOB is definitely wrong but that don't matter.", image_url:"martin.gif")
+Author.create(id: 1, name:"Tolkien", dob:19350412, nationality:"American", awards:"Awards...", biography:"He wrote the lord of the rings series. This DOB is so wrong...", image_url:"tolkien.jpg")
+Author.create(id: 2, name:"Rand", dob:18191212, nationality:"German", awards:"Awards...", biography:"She wrote something important too. DOB is also wrong...", image_url:"rand.jpg")
+Author.create(id: 3, name:"Card", dob:17890913, nationality:"American", awards:"Awards...", biography:"He wrote something about something that people cared about. DOB so, so wrong...", image_url:"card.jpg")
+Author.create(id: 4, name:"Orwell", dob:18010222, nationality:"Russian", awards:"Awards...", biography:"He wrote about depressing stuff that a lot of people probably cared about. DOB...lol", image_url:"orwell.jpg")
+Author.create(id: 5, name:"Martin", dob:19650730, nationality:"Westeroc", awards:"Highborn", biography:"He's the man. Hands down the GOAT. DOB is definitely wrong but that don't matter.", image_url:"martin.gif")
 
 Book.create(isbn: '9780582186552', title: 'The Hobbit', author_id: '1', genre: 'Fiction',
     abstract: 'A precursor to many sequels ',
