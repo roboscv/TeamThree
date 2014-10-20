@@ -1,11 +1,18 @@
 GmuLibraryProject::Application.routes.draw do
+  get "sessions/new"
   resources :reservations
+  resources :users
+  resources :sessions
 
   resources :authors
   resources :books do
         get 'page/:page', :action => :index, :on => :collection
   end
-  root 'books#index'
+
+  get "log_in" => "sessions#new", :as => "log_in"
+  root 'sessions#new'
+
+
 
   #get "/books" => "books#index", as: 'books'
 
