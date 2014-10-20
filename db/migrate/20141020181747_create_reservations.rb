@@ -3,8 +3,9 @@ class CreateReservations < ActiveRecord::Migration
     create_table :reservations do |t|
       t.date :reserved_on
       t.date :due_on
-      t.datetime :created_at
-      t.datetime :updated_at
+      t.integer :user_id
+      t.references :user, index: true
+      t.references :book, index: true
 
       t.timestamps
     end

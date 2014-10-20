@@ -1,4 +1,6 @@
 GmuLibraryProject::Application.routes.draw do
+  resources :reservations
+
   resources :authors
   resources :books do
         get 'page/:page', :action => :index, :on => :collection
