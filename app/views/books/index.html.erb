@@ -4,7 +4,7 @@
 		<li>
 			<%= image_tag(book.image_cover_url,  :size => "150x200")%>
 			<%= link_to(book.title, book) %> by 
-			<!-- book.author.name-->
+			<%= book.author.name %>
 			</br>
 		</li></br>
 	<% end %>
