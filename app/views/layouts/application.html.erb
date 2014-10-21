@@ -18,9 +18,11 @@
     <div id="user_nav">
       <%= link_to "log in", log_in_path %>
     </div>
-    <div class="col-xs-3">
-      <%= render '/layouts/sidebar' %>
-    </div>
+    <% if session[:user_id] %>
+      <div class="col-xs-3">
+        <%= render '/layouts/sidebar' %>
+      </div>
+    <% end %>
   </div>
   <%= render '/layouts/footer' %>
 </body>

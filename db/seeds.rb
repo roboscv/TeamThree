@@ -35,5 +35,6 @@ Book.create(isbn: '9780451524935', title: '1984', author_id: '4', genre: 'Horror
 	pages:350, image_cover_url: 'http://upload.wikimedia.org/wikipedia/en/thumb/c/c3/1984first.jpg/220px-1984first.jpg',
 	published_on: '06/08/1949',
 	total_in_library:2)
+User.create(name: 'jc', user_id: 'admin', password_digest:'test', admin: 'true' )
 
 
