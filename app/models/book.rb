@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+	belongs_to :author
+	
 	validates :isbn, :title, :abstract, :pages, :genre, :published_on, :total_in_library, presence: true
 	validates :abstract, 
 		length: {minimum: 15, :message => "must be at least 15 characters."}

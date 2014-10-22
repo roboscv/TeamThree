@@ -1,6 +1,21 @@
 GmuLibraryProject::Application.routes.draw do
+  get "sessions/new"
+  resources :reservations
+  resources :users
+  resources :sessions
 
   resources :authors
+  resources :books do
+        get 'page/:page', :action => :index, :on => :collection
+  end
+
+  get "log_in" => "sessions#new", :as => "log_in"
+  root 'sessions#new'
+
+
+
+  #get "/books" => "books#index", as: 'books'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

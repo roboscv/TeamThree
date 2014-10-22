@@ -1,8 +1,13 @@
-<h1>Books</h>
+<h1>All Books</h>
 <ol>
 	<% @books.each do |book| %>
 		<li>
-			<%= link_to(book.title, book) %> </br>
-		</li>
+			<%= image_tag(book.image_cover_url,  :size => "150x200")%>
+			<%= link_to(book.title, book) %> by 
+			<%= book.author.name %>
+			</br>
+		</li></br>
 	<% end %>
+
 </ol>
+<%= paginate @books %>
