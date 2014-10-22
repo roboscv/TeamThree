@@ -5,7 +5,7 @@
 	</header>
 	<p><%= image_tag(@book.image_cover_url, :size => "250x300")%>
 	<p><label>ISBN: </label><%= @book.isbn%></p>
-	<p><label>Author: </label><%= link_to @book.author, author_path(@book.author_id) %>
+	<p><label>Author: </label><%= link_to @book.author.name, author_path(@book.author) %>
 	<p><label>Genre: </label><%= @book.genre %></p>
 	<p><label>Abstract: </label><%= @book.abstract %></p>
 	<p><label>Pages: </label><%= @book.pages %></p>
