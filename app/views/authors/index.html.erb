@@ -1,9 +1,12 @@
 <h1>Authors</h1>
 
-<ol>
+<ul class="authors">
 <% @authors.each do |author| %>
-	<li><%= link_to(author.name, author) %></li>
+	<p>
+		<%= image_tag(author.image_url,  :size => "150x200")%>		
+		<%= link_to(author.name, author) %>
+	</p>
 <% end %>
-</ol>
+</ul>
 
 <%= link_to("Create Author", new_author_path) %>

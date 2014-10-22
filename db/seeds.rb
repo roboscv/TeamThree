@@ -7,12 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-
-Author.create(name:"Tolkien", dob:'1935-04-12', nationality:"American", awards:"Awards...", biography:"He wrote the lord of the rings series. This DOB is so wrong...", image_url:"tolkien.jpg")
-Author.create(name:"Rand", dob:'1819-12-12', nationality:"German", awards:"Awards...", biography:"She wrote something important too. DOB is also wrong...", image_url:"rand.jpg")
-Author.create(name:"Card", dob:'1789-09-13', nationality:"American", awards:"Awards...", biography:"He wrote something about something that people cared about. DOB so, so wrong...", image_url:"card.jpg")
-Author.create(name:"Orwell", dob:'1801-02-22', nationality:"Russian", awards:"Awards...", biography:"He wrote about depressing stuff that a lot of people probably cared about. DOB...lol", image_url:"orwell.jpg")
-Author.create(name:"Martin", dob:'1965-07-30', nationality:"Westeroc", awards:"Highborn", biography:"He's the man. Hands down the GOAT. DOB is definitely wrong but that don't matter.", image_url:"martin.gif")
+Author.create(name:"Tolkien", dob:'1935-04-12', nationality:"American", awards:"Awards...", biography:"He wrote the lord of the rings series. This DOB is so wrong...", image_url:"http://img3.wikia.nocookie.net/__cb20131114153302/middleearthshadowofmordor7723/images/8/88/JRR_Tolkien.jpg")
+Author.create(name:"Rand", dob:'1819-12-12', nationality:"German", awards:"Awards...", biography:"She wrote something important too. DOB is also wrong...", image_url:"http://upload.wikimedia.org/wikipedia/en/3/32/Ayn_Rand1.jpg")
+Author.create(name:"Card", dob:'1789-09-13', nationality:"American", awards:"Awards...", biography:"He wrote something about something that people cared about. DOB so, so wrong...", image_url:"http://queerty-prodweb.s3.amazonaws.com/wp/docs/2013/10/card.jpg")
+Author.create(name:"Orwell", dob:'1801-02-22', nationality:"Russian", awards:"Awards...", biography:"He wrote about depressing stuff that a lot of people probably cared about. DOB...lol", image_url:"http://4umi.com/image/face/George_Orwell2.jpg")
+Author.create(name:"Martin", dob:'1965-07-30', nationality:"Westeroc", awards:"Highborn", biography:"He's the man. Hands down the GOAT. DOB is definitely wrong but that don't matter.", image_url:"http://i.lv3.hbo.com/assets/images/series/game-of-thrones/news/011211-george-r-r-martin-329901-2-300.jpg")
 
 
 Book.create(isbn: '9780582186552', title: 'The Hobbit', author_id: '1', genre: 'Fiction',

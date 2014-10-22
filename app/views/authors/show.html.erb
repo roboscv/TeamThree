@@ -1,13 +1,13 @@
-<%= render 'shared/flashes' %>
 <article class="author">
 	<header>
-		<h1><%= @author.name %><h1>
+		<h1 id="author_name_head"><%= @author.name %><h1>
 	</header>
-	<p><label>Date of birth: </label><%= formatted_date(@author.dob) %></p>
-	<p><label>Nationality: </label><%= @author.nationality %></p>
-	<p><label>Awards: </label><%= @author.awards %></p>
-	<p><label>Biography: </label><%= @author.biography %></p>
-	<p><label>Image URL: </label><%= @author.image_url %></p>
+	<p><%= image_tag(@author.image_url,  :size => "150x200")%><span class="span_top"><%= @author.biography %></span></p>
+	<header class="sub_head">Details</header>
+		<p><label>Date of birth: </label><%= formatted_date(@author.dob) %></p>
+		<p><label>Nationality: </label><%= @author.nationality %></p>
+		<p><label>Awards: </label><%= @author.awards %></p>
+	<header class="sub_head">Publications</header>
 </article>
 
 <%= link_to("Edit #{@author.name}", edit_author_path(@author)) %> |
