@@ -4,6 +4,7 @@
 		<h2><%= @book.title %><h2>
 	</header>
 	<p><%= image_tag(@book.image_cover_url, :size => "250x300")%>
+
 	<p><label>ISBN: </label><%= @book.isbn%></p>
 	<p><label>Author: </label><%= link_to @book.author.name, author_path(@book.author) %>
 	<p><label>Genre: </label><%= @book.genre %></p>
@@ -17,6 +18,7 @@
 			@book.total_in_library
 		end%></p>
 		
+	<p><label># Available: </label> <%= @available_reservations %> </p>
 </article>
 
 <%= link_to "Edit", edit_book_path(@book) %> |
