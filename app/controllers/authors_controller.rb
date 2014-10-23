@@ -25,6 +25,7 @@ class AuthorsController < ApplicationController
 
 
 	def show
+		@books = Book.find(:all, :conditions => "author_id = #{@author.id}")
 	end
 
 

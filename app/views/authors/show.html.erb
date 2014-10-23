@@ -7,8 +7,18 @@
 		<p><label>Date of birth: </label><%= formatted_date(@author.dob) %></p>
 		<p><label>Nationality: </label><%= @author.nationality %></p>
 		<p><label>Awards: </label><%= @author.awards %></p>
-	<header class="sub_head">Publications</header>
-</article>
+	<header class="sub_head">Publications</header></br>
+	<ol>
+	<% @books.each do |book| %>
+		<p>
+			<%= image_tag(book.image_cover_url,  :size => "150x200")%>
+			<%= link_to(book.title, book) %> by 
+			<%= book.author.name %>
+			</br>
+		</p></br>
+	<% end %>
+	</ol>
+</article>l
 
 <%= link_to("Edit #{@author.name}", edit_author_path(@author)) %> |
 <%= link_to("All Authors", authors_path) %>
