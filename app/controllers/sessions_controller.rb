@@ -6,7 +6,6 @@ end
 def create
     user1 = User.new(name: 'user1', username: 'Test', password: 'pw1', admin: 'true')
     user1.save
-  user =
   user = user1.authenticate(params[:username])
   user = user1.authenticate(params[:password])
   if user
