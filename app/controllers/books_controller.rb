@@ -10,7 +10,7 @@ class BooksController < ApplicationController
 	end
 
 	def show
-		@avalaible_reservations = @book.total_in_library - (Reservation.find(:all, :conditions => "book_id = #{@book.id}").count)
+		@available_reservations = @book.total_in_library - (Reservation.find(:all, :conditions => "book_id = #{@book.id}").count)
 	end
 
 	def create
