@@ -3,7 +3,7 @@ def new
 end
 
 def create
-  user = User.authenticate(params[:user_id], params[:password])
+  user = User.find_by_username(:user_id).authenticate(params[:user_id], params[:password])
   if user
     session[:user_id] = user.id
     redirect_to books_url, :notice => "Logged in!" 
