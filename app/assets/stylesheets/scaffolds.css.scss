@@ -64,3 +64,68 @@
   }
 }
 
+.books {
+  p {
+    width: 800px;
+    border: 1px solid blue;
+    padding: 10px;
+    padding-bottom: 10;
+    margin-bottom: 20px;
+    background-color: #E0EEEE;
+    font-size: 20px;
+  }
+}
+
+.book {
+  #book_head {
+    font-size: 30px;
+    color: #00688B;
+    text-align: left;
+  }
+  .sub_head {
+    font-size: 20px;
+    color: #00688B;
+    text-align: left;
+  }
+  .span_top {
+    vertical-align: top;
+    padding: 10px;
+  }
+} 
+
+.notice {
+  width: 600px;
+  padding: 5px 5px 5px 15px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #90EE90;
+  text-align: center;
+  font-size: 24px;
+}
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold; 
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

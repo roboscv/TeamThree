@@ -1,10 +1,10 @@
 <% content_for :title, @book.title %>
 <article class="book">
 	<header>
-		<h2><%= @book.title %><h2>
+		<h1 id="book_head"><%= @book.title %><h1>
 	</header>
 	<p><%= image_tag(@book.image_cover_url, :size => "250x300")%>
-
+	<span class="span_top"><%= @book.abstract %> </span></p>
 	<p><label>ISBN: </label><%= @book.isbn%></p>
 	<p><label>Author: </label><%= link_to @book.author.name, author_path(@book.author) %>
 	<p><label>Genre: </label><%= @book.genre %></p>

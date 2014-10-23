@@ -1,5 +1,5 @@
 <h1>All Books</h>
-<ol>
+<ol class="books">
 	<% @books.each do |book| %>
 		<li>
 			<%= image_tag(book.image_cover_url,  :size => "150x200")%>
