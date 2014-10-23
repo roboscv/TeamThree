@@ -18,10 +18,15 @@
 			@book.total_in_library
 		end%></p>
 		
-	<p><label># Available: </label> <%= @available_reservations %> </p>
+	<p><label># Available A: </label> <%= @available_reservations %> </p>
 </article>
 
 <%= link_to "Edit", edit_book_path(@book) %> |
 <%= button_to "Delete", @book, 
 	method: :delete, 
 	data: {confirm: 'Are you sure?'} %>
+
+<%= if @book.total_in_library > 0
+	button_to "Reserve",reservations_path, 
+	 notice: '{@book.title} has been reserved!' 
+	 end %>

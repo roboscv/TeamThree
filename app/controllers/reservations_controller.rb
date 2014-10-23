@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
 	before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 	
 	def index
-		@reservation= Reservation.all
+		@reservations= Reservation.all
 	end
 
 
@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
 	@reservation.reserved_on = Date.today
 	@reservation.due_date= Date.today + 7.days
 	@book.total_in_library= @book.total_in_library - 1
-	@resevation.save
+	@reservation.save
 	redirect_to reservation.url, notice: '{@book.title} has been reserved!'
 	end
 
@@ -31,3 +31,4 @@ private
 	def set_reservation
 		@reservation = Reservation.find(params[:id])
 	end
+end
