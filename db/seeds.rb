@@ -47,10 +47,6 @@ Book.create(isbn: '9780451524111', title: 'Another Test', author_id: '5', genre:
 	published_on: '01/01/1999',
 	total_in_library:6)
 
-User.create(name: 'jc', user_id: 'admin', password_digest:'test', admin: 'true')
-User.create(name: 'anon', user_id: 'user1', password_digest:'test', admin: 'false')
-User.create(name: 'anon', user_id: 'user2', password_digest:'test', admin: 'false')
-
 Reservation.create(reserved_on:'10/23/2014', due_on:'10/31/2014', user_id: 2, book_id: 3)
 Reservation.create(reserved_on:'10/15/2014', due_on:'10/23/2014', user_id: 3, book_id: 4)
 
