@@ -12,12 +12,18 @@ class ReservationsController < ApplicationController
 
 
 	def create
+	@reservation = @book.reservation.new
 
-	@reservation.reserved_on = Date.today
-	@reservation.due_date= Date.today + 7.days
-	@book.total_in_library= @book.total_in_library - 1
-	@reservation.save
-	redirect_to reservation.url, notice: '{@book.title} has been reserved!'
+		if @reservation.save
+			@reservation.book_id = :book_id
+			@reservation.reserved_on = Date.today
+			@reservation.due_date= Date.today + 7.days
+			@book.total_in_library= @book.total_in_library - 1
+			redirect_to reservations_path, notice: '{@book.title} has been reserved!'
+		else
+			render :new
+		end
+
 	end
 
 	def destroy
@@ -28,7 +34,16 @@ class ReservationsController < ApplicationController
 
 private
 
+	def set_user
+		@user=User.find(params[:user_id])
+	end
+
+	def set_book
+		@book=Book.find(params[:book_id])
+	end
+
 	def set_reservation
 		@reservation = Reservation.find(params[:id])
 	end
+
 end

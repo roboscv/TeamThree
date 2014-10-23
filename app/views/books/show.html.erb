@@ -27,6 +27,6 @@
 	data: {confirm: 'Are you sure?'} %>
 
 <%= if @book.total_in_library > 0
-	button_to "Reserve",reservations_path, 
+	button_to "Reserve",reservations_path(book_id: @book), 
 	 notice: '{@book.title} has been reserved!' 
 	 end %>

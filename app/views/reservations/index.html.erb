@@ -1,3 +1,13 @@
 <h1>My Reservations</h>
 <!-- wanted to insert loop here for the current user's reservations if the due date is > today and copy the format of the data that is within books/show.html.erb adding formatted_time(@reservation.reserved_on) and formatted_time(@reservation.due_on)-->
 	
+<% @reservations.each do |reservation| %>
+		<li>
+			<%= image_tag(reservation.book.image_cover_url,  :size => "150x200")%>
+			<%= link_to(reservation.book.title, books_path) %> by 
+			<%= reservation.book.author.name %>
+			<p><label>Reserved On: </label><%= reservation.reserved_on %></p>
+			<p><label>Due On: </label><%= reservation.due_on %></p>
+			</br>
+		</li></br>
+	<% end %>
