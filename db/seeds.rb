@@ -36,6 +36,21 @@ Book.create(isbn: '9780451524935', title: '1984', author_id: '4', genre: 'Horror
 	pages:350, image_cover_url: 'http://upload.wikimedia.org/wikipedia/en/thumb/c/c3/1984first.jpg/220px-1984first.jpg',
 	published_on: '06/08/1949',
 	total_in_library:2)
-User.create(name: 'jc', user_id: 'admin', password_digest:'test', admin: 'true' )
+Book.create(isbn: '9780451524000', title: 'None', author_id: '4', genre: 'Non-Fiction',
+    abstract: 'This is a test book with one available',
+	pages:10, image_cover_url: 'http://images.clipartpanda.com/sad-smiley-face-clipart-RTG6LznTL.png',
+	published_on: '01/01/1900',
+	total_in_library:1)
+Book.create(isbn: '9780451524111', title: 'Another Test', author_id: '5', genre: 'Non-Fiction',
+    abstract: 'This is a test book with six available',
+	pages:10, image_cover_url: 'http://images.clipartpanda.com/sad-smiley-face-clipart-RTG6LznTL.png',
+	published_on: '01/01/1999',
+	total_in_library:6)
 
+User.create(name: 'jc', user_id: 'admin', password_digest:'test', admin: 'true')
+User.create(name: 'anon', user_id: 'user1', password_digest:'test', admin: 'false')
+User.create(name: 'anon', user_id: 'user2', password_digest:'test', admin: 'false')
+
+Reservation.create(reserved_on:'10/23/2014', due_on:'10/31/2014', user_id: 2, book_id: 3)
+Reservation.create(reserved_on:'10/15/2014', due_on:'10/23/2014', user_id: 3, book_id: 4)
 

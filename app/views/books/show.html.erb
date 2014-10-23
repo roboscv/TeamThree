@@ -10,11 +10,16 @@
 	<p><label>Abstract: </label><%= @book.abstract %></p>
 	<p><label>Pages: </label><%= @book.pages %></p>
 	<p><label>Published On: </label><%= @book.published_on %></p>
-	<p><label># Available: </label> ADD something here
+	<p><label># Available: </label>
+		<%= if @book.total_in_library < 1
+			"None Available"
+		else 
+			@book.total_in_library
+		end%></p>
+		
 </article>
 
 <%= link_to "Edit", edit_book_path(@book) %> |
 <%= button_to "Delete", @book, 
 	method: :delete, 
 	data: {confirm: 'Are you sure?'} %>
-

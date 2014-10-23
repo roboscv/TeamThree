@@ -1,6 +1,7 @@
 GmuLibraryProject::Application.routes.draw do
   get "sessions/new"
   resources :reservations
+  resources :overdue
   resources :users
   resources :sessions
 
