@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
 	before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+	before_action :set_book, only: [:create,:destroy]
 	
 	def index
 		@reservations= Reservation.all
@@ -11,21 +12,27 @@ class ReservationsController < ApplicationController
 	end
 
 
+
+#@log_entry = @wine.log_entries.new(log_entry_params)
+		#if @log_entry.save
+		#	redirect_to wine_log_entries_path(@wine), notice: 'Log entry saved!'
+		#else 
+		#	render :new
+		#end
+
+
 	def create
-	@reservation = @book.reservation.new
-
-		if @reservation.save
-			@reservation.book_id = :book_id
-			@reservation.reserved_on = Date.today
-			@reservation.due_date= Date.today + 7.days
+		if @book.total_in_library > 0
+			@reservation= @book.reservations.new(book_id: params[:book_id], user_id: session[:user_id],
+			reserved_on: Date.today, due_on: Date.today + 7.days)
 			@book.total_in_library= @book.total_in_library - 1
-			redirect_to reservations_path, notice: '{@book.title} has been reserved!'
-		else
-			render :new
+			if @reservation.save
+				redirect_to reservations_path, notice: '{@book.title} has been reserved!'
+			else
+				render :new
+			end
 		end
-
 	end
-
 	def destroy
 
 		@book.total_in_library= @book.total_in_library + 1

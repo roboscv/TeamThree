@@ -5,6 +5,6 @@ def formatted_time(time)
 
  def set_dates
  	@reservation.reserved_on = Date.today
-	@reservation.due_date= Date.today + 7.days
+	@reservation.due_date= @reservation.reserved_on + 7.days
 end
 end

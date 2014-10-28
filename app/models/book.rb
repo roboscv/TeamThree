@@ -1,5 +1,6 @@
 class Book < ActiveRecord::Base
 	belongs_to :author
+	has_many :reservations, dependent: :destroy
 	
 	validates :isbn, :title, :abstract, :pages, :genre, :published_on, :total_in_library, presence: true
 	validates :abstract, 
