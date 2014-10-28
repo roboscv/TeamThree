@@ -12,13 +12,16 @@
 	<p><label>Pages: </label><%= @book.pages %></p>
 	<p><label>Published On: </label><%= @book.published_on %></p>
 	<p><label># Total in Library: </label>
-		<%= if @book.total_in_library < 1
-			"None Available"
-		else 
-			@book.total_in_library
-		end%></p>
+		<%= @book.total_in_library %>
+	</p>
 		
-	<p><label># Reservations Available: </label> <%= @available_reservations %> </p>
+	<p><label># Reservations Available: </label> 
+		<% if @available_reservations > 0 %>
+			<%=	@available_reservations %> 
+		<% else %>
+			None Available
+		<% end %>
+	</p>
 </article>
 
 <%= link_to "Edit", edit_book_path(@book) %> |
@@ -28,5 +31,5 @@
 
 <%= if @available_reservations > 0
 	button_to "Reserve",reservations_path(book_id: @book), 
-	 notice: '{@book.title} has been reserved!' 
+	 notice: '#{@book.title} has been reserved!' 
 	 end %>
