@@ -4,6 +4,7 @@ class ReservationsController < ApplicationController
 	
 	def index
 		@reservations= Reservation.all
+		@reservations = Reservation.order(:id).page(params[:created_at])
 	end
 
 
@@ -11,23 +12,13 @@ class ReservationsController < ApplicationController
 		@reservation = Reservation.new
 	end
 
-
-
-#@log_entry = @wine.log_entries.new(log_entry_params)
-		#if @log_entry.save
-		#	redirect_to wine_log_entries_path(@wine), notice: 'Log entry saved!'
-		#else 
-		#	render :new
-		#end
-
-
 	def create
 		if @book.total_in_library > 0
 			@reservation= @book.reservations.new(book_id: params[:book_id], user_id: session[:user_id],
 			reserved_on: Date.today, due_on: Date.today + 7.days)
 			@book.total_in_library= @book.total_in_library - 1
 			if @reservation.save
-				redirect_to reservations_path, notice: '{@book.title} has been reserved!'
+				redirect_to reservations_path, notice: '#{@book.title} has been reserved!'
 			else
 				render :new
 			end
@@ -37,6 +28,7 @@ class ReservationsController < ApplicationController
 
 		@book.total_in_library= @book.total_in_library + 1
 		@reservation.destroy
+		redirect_to reservations_url, notice: '#{@book.title} was removed from Reservations'
 	end
 
 private

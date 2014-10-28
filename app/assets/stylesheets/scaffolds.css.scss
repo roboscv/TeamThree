@@ -129,3 +129,31 @@
     list-style: square;
   }
 }
+.reservations {
+  p {
+    width: 800px;
+    border: 1px solid blue;
+    padding: 10px;
+    padding-bottom: 10;
+    margin-bottom: 20px;
+    background-color: #E0EEEE;
+    font-size: 20px;
+  }
+}
+
+.reservation {
+  #reservation_name_head {
+    font-size: 30px;
+    color: #00688B;
+    text-align: left;
+  }
+  .sub_head {
+    font-size: 20px;
+    color: #00688B;
+    text-align: left;
+  }
+  .span_top {
+    vertical-align: top;
+    padding: 10px;
+  }
+} 
