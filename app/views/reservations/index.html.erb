@@ -6,12 +6,12 @@
 		<li>
 			<p>
 			<%= image_tag(reservation.book.image_cover_url,  :size => "150x200")%>
-			<%= link_to(reservation.book.title, books_path)%> by 
-			<%= reservation.book.author.name %> 
+			<%= link_to(reservation.book.title, books_url(reservation.book_id))%> by 
+			<%= reservation.book.author.name %> </br>
 			<label>Reserved On: </label><%= reservation.reserved_on %></br>
-			<label>Due On: </label><%= reservation.due_on %>
+			<label>Due On: </label><%= reservation.due_on %></br>
 			<%= button_to 'Return book', method: :delete,  data: {confirm: 'Are you sure?' } %>
-			</li></br>
-	<% end %>
+		</p>
+<% end %>
 <ul class="reservations">
 <%= paginate @reservations %>
